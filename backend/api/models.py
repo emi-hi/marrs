@@ -22,7 +22,6 @@ def get_image_filename(instance, filename):
     return "product_images/%s" % (id)  
 
 class Image(models.Model):
-    product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='images', default=None, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=get_image_filename,
                               verbose_name='Image')
-                              
