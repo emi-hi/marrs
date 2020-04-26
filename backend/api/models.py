@@ -10,8 +10,12 @@ class Product(models.Model):
     product_type = models.ForeignKey(ProductType, to_field="id", null=True, on_delete=models.SET_NULL)
     description = models.TextField(blank=True)
 
+
+def get_image_filename(instance, filename):
+    id = instance.product.id
+    return "product_images/%s" % (id)  
+
 class Image(models.Model):
-    file_path = models.CharField(max_length=200, blank=False, null=False)
-    product = models.ForeignKey(Product, to_field="id", on_delete=models.CASCADE)
-
-
+    product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to=get_image_filename,
+                              verbose_name='Image')

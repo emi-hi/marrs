@@ -1,6 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import generics
+
+from .models import Product
+from .serializers import ProductSerializer
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the index.")
+class ListProduct(generics.ListCreateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+
+class DetailProduct(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
