@@ -60,7 +60,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8080',
 ]
 
-ROOT_URLCONF = 'backend.urls'
+ROOT_URLCONF = 'marrs.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'marrs.wsgi.application'
 
 
 # Database
