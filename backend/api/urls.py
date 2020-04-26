@@ -1,9 +1,10 @@
-# todos/urls.py
-from django.urls import path
+# todo_api/urls.py
+from django.contrib import admin
+from django.urls import include, path
 
-from . import views
 
 urlpatterns = [
-    path('', views.ListProduct.as_view()),
-    path('<int:pk>/', views.DetailProduct.as_view()),
+    path('api/', include('api.urls')),
+    path('admin/', admin.site.urls),
+    
 ]
