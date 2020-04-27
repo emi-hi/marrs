@@ -3,7 +3,7 @@ import React from "react";
 
 
 
-export default function Products(props) {
+export default function Shop(props) {
 
 
   return (
