@@ -16,7 +16,10 @@ import ShopNav from './components/ShopNav'
 import axios from 'axios';
 
 function App() {
-  const [products, setProducts] = useState({})
+  const [products, setProducts] = useState([])
+  const [selectedType, setSelectedType] = useState('all')
+
+
   useEffect(() => {
     axios.get(`http://localhost:8000/api/product`)
     .then(res => {   
@@ -68,8 +71,8 @@ function App() {
                   <Home />
                 </Route>
                 <Route path="/shop">
-                  <ShopNav />
-                  <Shop />
+                  <ShopNav setSelectedType={setSelectedType} />
+                  <Shop products={products} selectedType={selectedType}/>
                 </Route>
                 <Route path="/repairs">
                   <Repairs />

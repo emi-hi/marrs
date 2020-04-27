@@ -7,8 +7,14 @@ class ImageSerializer(serializers.ModelSerializer):
     model = Image
     fields = "__all__"
 
+class ProductTypeSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = ProductType
+    fields = "__all__"
+
 class ProductSerializer(serializers.ModelSerializer):
   images = ImageSerializer(many=True)
+  product_type = ProductTypeSerializer()
   class Meta:
       fields = [
           'id',
