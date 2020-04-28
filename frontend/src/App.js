@@ -4,7 +4,6 @@ import {
   Switch,
   Route,
   Link,
-  useLocation
 } from "react-router-dom";
 import './App.scss';
 import Home from './components/Home'
@@ -17,7 +16,7 @@ import axios from 'axios';
 
 function App() {
   const [products, setProducts] = useState([])
-  const [selectedType, setSelectedType] = useState('all')
+  const [selectedType, setSelectedType] = useState('All')
 
 
   useEffect(() => {
