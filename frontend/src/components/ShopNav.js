@@ -2,7 +2,7 @@
 import React from "react";
 
 export default function ShopNav(props) {
-  const { setSelectedType } = props
+  const { selectedType, setSelectedType } = props
   const shopMenuItems = [
     'All', 
   'Accessories', 
@@ -10,9 +10,12 @@ export default function ShopNav(props) {
   'Keyboards and Synths',
   'Pedals'
 ]
+
   const listMenu = shopMenuItems.map((item) => {
       return ( 
-        <li onClick={()=>setSelectedType(item)}>{item}</li>
+        <li 
+       style={item === selectedType? {fontWeight: 'bold'}: {fontWeight:'normal'}}
+        onClick={()=>setSelectedType(item)}>{item}</li>
 )
     })
   return (

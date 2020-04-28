@@ -70,7 +70,7 @@ function App() {
                   <Home />
                 </Route>
                 <Route path="/shop">
-                  <ShopNav setSelectedType={setSelectedType} />
+                  <ShopNav setSelectedType={setSelectedType} selectedType={selectedType} />
                   <Shop products={products} selectedType={selectedType}/>
                 </Route>
                 <Route path="/repairs">
