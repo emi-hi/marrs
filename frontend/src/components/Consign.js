@@ -8,7 +8,7 @@ export default function Consign(props) {
 
   return (
     <div>
-      <h1>SELL/TRADE/CONSIGN</h1>
+      <h6>consign stuff</h6>
     </div>
   )
 

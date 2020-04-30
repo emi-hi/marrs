@@ -6,7 +6,7 @@ import React from "react";
 export default function Home(props) {
   return (
     <div>
-      <h1>WELCOME TO MY WEBSITE</h1>
+<p>this will be a cute homepage 😁</p>
     </div>
   )
 

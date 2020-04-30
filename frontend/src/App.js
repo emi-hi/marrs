@@ -11,7 +11,7 @@ import Shop from './components/Shop'
 import Repairs from './components/Repairs'
 import Consign from './components/Consign'
 import Studio from './components/Studio'
-import ShopNav from './components/ShopNav'
+import MainNav from'./components/MainNav'
 import axios from 'axios';
 
 function App() {
@@ -34,34 +34,16 @@ function App() {
         <div className="app-main">
           <header>
             <div>
-              <img src="./images/header1.png" id="left"/>
+              <img src="./images/header1.png" id="left" alt='pedal1'/>
               <span>
                 <h1>Marrs Audio</h1>
                 <h2>2008 Douglas St - Victoria BC</h2>
                 <h3>778-928-4574</h3>
                 <h3>julian.marrsaudio@gmail.com</h3>
               </span>
-              <img src="./images/header2.png" id="right"/>
+              <img src="./images/header2.png" id="right" alt='pedal2'/>
             </div>
-            <div>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/shop">Shop</Link>
-                </li>
-                <li>
-                  <Link to="/repairs">Repairs</Link>
-                </li>
-                <li>
-                  <Link to="/consign">Consign/Sell/Trade</Link>
-                </li>
-                <li>
-                  <Link to="/studio">Studio</Link>
-                </li>
-              </ul>
-            </div>
+            <MainNav setSelectedType={setSelectedType}/>
           </header>
           `<main>
             <section>
@@ -69,8 +51,14 @@ function App() {
                 <Route exact path="/">
                   <Home />
                 </Route>
+                <Route path="/shop/accessories">
+                  <Shop products={products} selectedType={selectedType}/>
+                </Route>
+
+                <Route path="/shop/guitars">
+                  <Shop products={products} selectedType={selectedType}/>
+                </Route>
                 <Route path="/shop">
-                  <ShopNav setSelectedType={setSelectedType} selectedType={selectedType} />
                   <Shop products={products} selectedType={selectedType}/>
                 </Route>
                 <Route path="/repairs">

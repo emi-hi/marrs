@@ -13,7 +13,7 @@ export default function ShopNav(props) {
 
   const listMenu = shopMenuItems.map((item) => {
       return ( 
-        <li 
+        <li className="col"
        style={item === selectedType? {fontWeight: 'bold'}: {fontWeight:'normal'}}
         onClick={()=>setSelectedType(item)}>{item}</li>
 )

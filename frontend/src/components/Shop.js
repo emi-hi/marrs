@@ -8,20 +8,22 @@ export default function Shop(props) {
   const showProducts = products.map((product) => {
     if (product.product_type.name === selectedType || selectedType === 'All') {
       return ( 
-      <article className="col" key={product.id}> 
+      <div className="col-sm-3" key={product.id}> 
         <div className="product-image-box">
         </div>
-        <h4>${product.price} - {product.title}</h4>
-        <p>{product.description}</p>
-      </article>)
-    }
-    else {
-      return
+        <h5>{product.title}</h5>
+        <h5>${product.price}</h5>
+        {/* <p>{product.description}</p> */}
+      </div>)
+    } else {
+      return ''
     }
   });
   return (
-    <div className="row">
-      {showProducts}
+    <div className="shop">
+      <div className="row">
+        {showProducts}
+      </div>
     </div>
   )
 
