@@ -3,13 +3,23 @@ import React from "react";
 
 
 
-export default function Products(props) {
+export default function Product(props) {
+  const { selectedProduct } = props
+  console.log(selectedProduct)
 
+  const imageMap =  selectedProduct.images.map((image) => {
 
+    return (
+      <img src={image.image}/>
+    )})
+
+    
   return (
     <div>
-      <h1>STUDIO INFO</h1>
+      <h3>{selectedProduct.title}</h3>
+      {imageMap}
+      <h3>{selectedProduct.price}</h3>
+      <h5>{selectedProduct.description}</h5>
     </div>
-  )
-
-};
+    )
+}

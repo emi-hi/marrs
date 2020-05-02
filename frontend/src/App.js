@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  BrowserRouter as Router,
+  Router,
   Switch,
   Route,
   Link,
@@ -11,56 +11,71 @@ import Shop from './components/Shop'
 import Repairs from './components/Repairs'
 import Consign from './components/Consign'
 import Studio from './components/Studio'
-import MainNav from'./components/MainNav'
+import Product from './components/Product'
 import axios from 'axios';
-
+import ROUTES_PRODUCTS from './routes/Products'
+import Header from './components/Header'
+import history from './history';
 function App() {
   const [products, setProducts] = useState([])
   const [selectedType, setSelectedType] = useState('All')
-
+  const [selectedProduct, setSelectedProduct] = useState({})
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/product`)
+    axios.get(`/api/product`)
     .then(res => {   
       setProducts(res.data)
-      console.log(res.data)
+      // console.log(res.data)
     })
     .catch(error => {console.log(error)})
   }, [])
   
   return (
-    <Router>
+    <Router history={history}>
       <div className="application">
         <div className="app-main">
-          <header>
-            <div>
-              <img src="./images/header1.png" id="left" alt='pedal1'/>
-              <span>
-                <h1>Marrs Audio</h1>
-                <h2>2008 Douglas St - Victoria BC</h2>
-                <h3>778-928-4574</h3>
-                <h3>julian.marrsaudio@gmail.com</h3>
-              </span>
-              <img src="./images/header2.png" id="right" alt='pedal2'/>
-            </div>
-            <MainNav setSelectedType={setSelectedType}/>
-          </header>
+          <Header setSelectedType={setSelectedType}/>
           `<main>
             <section>
               <Switch>
                 <Route exact path="/">
                   <Home />
                 </Route>
-                <Route path="/shop/accessories">
-                  <Shop products={products} selectedType={selectedType}/>
+                <Route exact path={ROUTES_PRODUCTS.DETAIL}
+                  render={() => <Product selectedProduct={selectedProduct}/>}
+              />
+              
+                <Route path="/shop/Accessories">
+                  <Shop products={products}
+                  selectedType={'Accessories'}
+                  setSelectedProduct={setSelectedProduct}/>
                 </Route>
-
-                <Route path="/shop/guitars">
-                  <Shop products={products} selectedType={selectedType}/>
+                <Route path="/shop/Amplifiers">
+                  <Shop
+                  products={products}
+                  selectedType={'Amplifiers'}
+                  setSelectedProduct={setSelectedProduct}/>
+                </Route>
+                <Route path="/shop/Guitars">
+                  <Shop products={products} selectedType={'Guitars'}
+                  setSelectedProduct={setSelectedProduct}/>
+                </Route>
+                <Route path="/shop/Keyboards">
+                  <Shop products={products}
+                  selectedType={'Keyboards and Synths'}
+                  setSelectedProduct={setSelectedProduct}/>
+                </Route>
+                <Route path="/shop/Pedals">
+                  <Shop products={products}
+                  selectedType={'Pedals'}
+                  setSelectedProduct={setSelectedProduct}/>
                 </Route>
                 <Route path="/shop">
-                  <Shop products={products} selectedType={selectedType}/>
+                  <Shop products={products}
+                  selectedType={'All'}
+                  setSelectedProduct={setSelectedProduct}/>
                 </Route>
+
                 <Route path="/repairs">
                   <Repairs />
                 </Route>

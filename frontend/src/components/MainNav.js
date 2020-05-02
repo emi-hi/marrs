@@ -20,10 +20,10 @@ return (
           <Nav.Link  as={Link} to="/studio">Studio</Nav.Link>
           <NavDropdown title="Shop" id="collasible-nav-dropdown">
             <NavDropdown.Item  as={Link} to="/shop/accessories" onClick={()=>setSelectedType('Accessories')}>Accessories</NavDropdown.Item>
-            <NavDropdown.Item  as={Link} to="/shop/amplifiers" onClick={()=>setSelectedType('Amplifiers')}>Amplifiers</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/shop/guitars" onClick={()=>setSelectedType('Guitars')}>Guitars</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/shop/keyboards" onClick={()=>setSelectedType('Keyboards and Synths')}>Keyboard and Synths</NavDropdown.Item>
-            <NavDropdown.Item  as={Link} to="/shop/pedals" onClick={()=>setSelectedType('Pedals')}>Pedals</NavDropdown.Item>
+            <NavDropdown.Item  as={Link} to="/shop/Amplifiers" onClick={()=>setSelectedType('Amplifiers')}>Amplifiers</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/shop/Guitars" onClick={()=>setSelectedType('Guitars')}>Guitars</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/shop/Keyboards" onClick={()=>setSelectedType('Keyboards and Synths')}>Keyboard and Synths</NavDropdown.Item>
+            <NavDropdown.Item  as={Link} to="/shop/Pedals" onClick={()=>setSelectedType('Pedals')}>Pedals</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item as={Link} to="/shop/">All</NavDropdown.Item>
           </NavDropdown>
