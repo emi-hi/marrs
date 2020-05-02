@@ -1,11 +1,8 @@
 header {
-  background-image: url("/background-90-long-flip.jpg");
-  background-size: 2200px;
-  background-repeat: repeat;
-  padding-top: 1vh;
+  background-image: url("/background2.jpg");
+  object-fit: cover;
   display:flex;
   flex-direction: column;
-  // height: 25vh;
 
   div {
     display: flex;
