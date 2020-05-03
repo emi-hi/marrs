@@ -18,7 +18,7 @@ import Header from './components/Header'
 import history from './history';
 function App() {
   const [products, setProducts] = useState([])
-  const [selectedType, setSelectedType] = useState('All')
+  const [selectedType, setSelectedType] = useState('')
   const [selectedProduct, setSelectedProduct] = useState({})
 
   useEffect(() => {
@@ -42,40 +42,12 @@ function App() {
                   <Home />
                 </Route>
                 <Route exact path={ROUTES_PRODUCTS.DETAIL}
-                  render={() => <Product selectedProduct={selectedProduct}/>}
+                  render={() => <Product selectedProduct={selectedProduct} products={products}/>}
               />
-              
-                <Route path="/shop/Accessories">
-                  <Shop products={products}
-                  selectedType={'Accessories'}
-                  setSelectedProduct={setSelectedProduct}/>
-                </Route>
-                <Route path="/shop/Amplifiers">
-                  <Shop
-                  products={products}
-                  selectedType={'Amplifiers'}
-                  setSelectedProduct={setSelectedProduct}/>
-                </Route>
-                <Route path="/shop/Guitars">
-                  <Shop products={products} selectedType={'Guitars'}
-                  setSelectedProduct={setSelectedProduct}/>
-                </Route>
-                <Route path="/shop/Keyboards">
-                  <Shop products={products}
-                  selectedType={'Keyboards and Synths'}
-                  setSelectedProduct={setSelectedProduct}/>
-                </Route>
-                <Route path="/shop/Pedals">
-                  <Shop products={products}
-                  selectedType={'Pedals'}
-                  setSelectedProduct={setSelectedProduct}/>
-                </Route>
-                <Route path="/shop">
-                  <Shop products={products}
-                  selectedType={'All'}
-                  setSelectedProduct={setSelectedProduct}/>
-                </Route>
-
+               <Route path={ROUTES_PRODUCTS.LIST}
+                  render={() => <Shop products={products} 
+                  setSelectedProduct={setSelectedProduct}/>}
+              />
                 <Route path="/repairs">
                   <Repairs />
                 </Route>

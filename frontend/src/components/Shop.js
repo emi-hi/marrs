@@ -1,13 +1,15 @@
 
 import React from "react";
 import history from '../history'
+import { useParams } from 'react-router-dom';
 
 export default function Shop(props) {
   
-  const { products, selectedType, setSelectedProduct } = props
-
+  const { products,  setSelectedProduct } = props
+  const { type } = useParams();
+  console.log(type)
   const showProducts = products.map((product) => {
-    if (product.product_type.name === selectedType || selectedType === 'All') {
+    if (product.product_type.name.toUpperCase() === type.toUpperCase() || type === '' ){
       return ( 
         <a
         onClick={()=>{
