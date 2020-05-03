@@ -33,10 +33,8 @@ function App() {
   return (
     <Router history={history}>
       <div className="application">
-        <div className="app-main">
           <Header setSelectedType={setSelectedType}/>
-          `<main>
-            <section>
+          `<main className="app-main">
               <Switch>
                 <Route exact path="/">
                   <Home />
@@ -58,10 +56,8 @@ function App() {
                   <Studio />
                 </Route>
               </Switch>
-            </section>
           </main>
         </div>
-      </div>
     </Router>
   );
   }

@@ -8,7 +8,7 @@ export default function Repairs(props) {
 
   return (
     <div>
-      <h1>BRING STUFF IN TO FIX</h1>
+      <h6>BRING STUFF IN TO FIX</h6>
     </div>
   )
 

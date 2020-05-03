@@ -15,9 +15,6 @@ return (
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <Nav.Link  as={Link} to="/repairs">Repairs</Nav.Link>
-          <Nav.Link  as={Link} to="/consign">Consign</Nav.Link>
-          <Nav.Link  as={Link} to="/studio">Studio</Nav.Link>
           <NavDropdown title="Shop" id="collasible-nav-dropdown">
             <NavDropdown.Item  as={Link} to="/shop/accessories" onClick={()=>setSelectedType('Accessories')}>Accessories</NavDropdown.Item>
             <NavDropdown.Item  as={Link} to="/shop/Amplifiers" onClick={()=>setSelectedType('Amplifiers')}>Amplifiers</NavDropdown.Item>
@@ -27,6 +24,10 @@ return (
             <NavDropdown.Divider />
             <NavDropdown.Item as={Link} to="/shop/">All</NavDropdown.Item>
           </NavDropdown>
+          <Nav.Link  as={Link} to="/repairs">Repairs</Nav.Link>
+          <Nav.Link  as={Link} to="/consign">Sell/Consign/Trade</Nav.Link>
+          <Nav.Link  as={Link} to="/studio">Studio</Nav.Link>
+
         </Nav>
       </Navbar.Collapse>
   </Navbar>

@@ -7,22 +7,24 @@ export default function Shop(props) {
   
   const { products,  setSelectedProduct } = props
   const { type } = useParams();
-  console.log(type)
+  
   const showProducts = products.map((product) => {
     if (product.product_type.name.toUpperCase() === type.toUpperCase() || type === '' ){
+      const firstImage = product.images.length > 0 ? product.images[0].image : '/images/testguitar.jpg'
       return ( 
-        <a
+        
+        <div className="col-sm-3" id="each-product" key={product.id}
         onClick={()=>{
         setSelectedProduct(product)
         history.push(`${product.product_type.name}/${product.id}`)}}>
-      <div className="col-sm-3" key={product.id}> 
         <div className="product-image-box">
+         <img id="thumbnail-product" src={firstImage} />
         </div>
         <h5>{product.title}</h5>
-        <h5>${product.price}</h5>
+        <h5 id="price">${product.price}</h5>
       </div>
 
-      </a>)
+      )
     } else {
       return ''
     }
