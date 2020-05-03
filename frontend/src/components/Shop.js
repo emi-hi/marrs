@@ -3,6 +3,7 @@ import React from "react";
 import history from '../history'
 
 export default function Shop(props) {
+  
   const { products, selectedType, setSelectedProduct } = props
 
   const showProducts = products.map((product) => {
