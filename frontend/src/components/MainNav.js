@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 
 export default function MainNav(props) {
-  const {setSelectedType} = props
+
 return (
   <div>
     <Navbar collapseOnSelect expand="lg" bg="light" className="navbar transparent navbar-inverse">
@@ -16,11 +16,11 @@ return (
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
           <NavDropdown title="Shop" id="collasible-nav-dropdown">
-            <NavDropdown.Item  as={Link} to="/shop/accessories" onClick={()=>setSelectedType('Accessories')}>Accessories</NavDropdown.Item>
-            <NavDropdown.Item  as={Link} to="/shop/Amplifiers" onClick={()=>setSelectedType('Amplifiers')}>Amplifiers</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/shop/Guitars" onClick={()=>setSelectedType('Guitars')}>Guitars</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/shop/Keyboards" onClick={()=>setSelectedType('Keyboards and Synths')}>Keyboard and Synths</NavDropdown.Item>
-            <NavDropdown.Item  as={Link} to="/shop/Pedals" onClick={()=>setSelectedType('Pedals')}>Pedals</NavDropdown.Item>
+            <NavDropdown.Item  as={Link} to="/shop/accessories" >Accessories</NavDropdown.Item>
+            <NavDropdown.Item  as={Link} to="/shop/Amplifiers" >Amplifiers</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/shop/Guitars" >Guitars</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/shop/Keyboards" >Keyboard and Synths</NavDropdown.Item>
+            <NavDropdown.Item  as={Link} to="/shop/Pedals" >Pedals</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item as={Link} to="/shop/">All</NavDropdown.Item>
           </NavDropdown>

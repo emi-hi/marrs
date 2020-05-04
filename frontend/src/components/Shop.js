@@ -9,7 +9,8 @@ export default function Shop(props) {
   const { type } = useParams();
   
   const showProducts = products.map((product) => {
-    if (product.product_type.name.toUpperCase() === type.toUpperCase() || type === '' ){
+
+    if (!type || product.product_type.name.toUpperCase() === type.toUpperCase()){
       const firstImage = product.images.length > 0 ? product.images[0].image : '/images/testguitar.jpg'
       return ( 
         
@@ -18,7 +19,7 @@ export default function Shop(props) {
           setSelectedProduct(product)
           history.push(`${product.product_type.name}/${product.id}`)}}>
           <div className="product-image-box">
-            <img id="thumbnail-product" src={firstImage} />
+            <img id="thumbnail-product" src={firstImage} alt={product.title} />
           </div>
           <h6>{product.title}</h6>
           <p id="price">${product.price}</p>

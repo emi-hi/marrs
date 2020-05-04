@@ -3,7 +3,6 @@ import {
   Router,
   Switch,
   Route,
-  Link,
 } from "react-router-dom";
 import './App.scss';
 import Home from './components/Home'
@@ -18,7 +17,6 @@ import Header from './components/Header'
 import history from './history';
 function App() {
   const [products, setProducts] = useState([])
-  const [selectedType, setSelectedType] = useState('')
   const [selectedProduct, setSelectedProduct] = useState({})
 
   useEffect(() => {
@@ -33,7 +31,7 @@ function App() {
   return (
     <Router history={history}>
       <div className="application">
-          <Header setSelectedType={setSelectedType}/>
+          <Header />
           `<main className="app-main">
               <Switch>
                 <Route exact path="/">
@@ -46,6 +44,9 @@ function App() {
                   render={() => <Shop products={products} 
                   setSelectedProduct={setSelectedProduct}/>}
               />
+              <Route exact path = '/shop/' render={() => <Shop products={products}
+                  setSelectedProduct={setSelectedProduct}/>} 
+                  />
                 <Route path="/repairs">
                   <Repairs />
                 </Route>

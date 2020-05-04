@@ -2,7 +2,6 @@ import React from 'react'
 import MainNav from './MainNav'
 
 export default function Header(props){
-  const { setSelectedType } = props
   return(
     <header>
       <div>
@@ -15,7 +14,7 @@ export default function Header(props){
         </span>
         {/* <img src="./images/header2.png" id="right" alt='pedal2'/> */}
       </div>
-      <MainNav setSelectedType={setSelectedType}/>
+      <MainNav />
     </header>
   )
 }

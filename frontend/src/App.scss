@@ -73,21 +73,40 @@ div.application {
       }
     }
   }
+
 }
 
+div#selected-product {
+  text-align:center;
+  width: 90%;
+  #product-main-pic {
+    width:100%;
+  }
+    #product-image {
+    }
+    #product-text {
+      #price {
+        text-align: right;
+        font-weight: bold;
 
-li.col {
-  margin: 10px;
+      }
+      p {
+        text-align: left;
+    }
+    }
+}
+// li.col {
+//   margin: 10px;
   
-}
-a.col-sm-1 { 
-  margin:5px;
-  padding: 5px;
-}
-a.col-sm-4 { 
-  margin:5px;
-  padding: 5px;
-}
+// }
+// a.col-sm-1 { 
+//   margin:5px;
+//   padding: 5px;
+// }
+// a.col-sm-4 { 
+//   margin:5px;
+//   padding: 5px;
+// }
 
 // /* IPHONE STYLES */
 @media only screen and (max-width: 560px) {
