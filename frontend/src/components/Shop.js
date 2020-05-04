@@ -13,16 +13,16 @@ export default function Shop(props) {
       const firstImage = product.images.length > 0 ? product.images[0].image : '/images/testguitar.jpg'
       return ( 
         
-        <div className="col-sm-3" id="each-product" key={product.id}
-        onClick={()=>{
-        setSelectedProduct(product)
-        history.push(`${product.product_type.name}/${product.id}`)}}>
-        <div className="product-image-box">
-         <img id="thumbnail-product" src={firstImage} />
+        <div className="col-lg-3" id="each-product" key={product.id}
+          onClick={()=>{
+          setSelectedProduct(product)
+          history.push(`${product.product_type.name}/${product.id}`)}}>
+          <div className="product-image-box">
+            <img id="thumbnail-product" src={firstImage} />
+          </div>
+          <h6>{product.title}</h6>
+          <p id="price">${product.price}</p>
         </div>
-        <h5>{product.title}</h5>
-        <h5 id="price">${product.price}</h5>
-      </div>
 
       )
     } else {
@@ -31,7 +31,7 @@ export default function Shop(props) {
   });
   return (
     <div className="shop">
-      <div className="row">
+      <div className="row row-no-gutters">
         {showProducts}
       </div>
     </div>
