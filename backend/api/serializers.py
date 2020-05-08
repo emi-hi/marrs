@@ -22,6 +22,8 @@ class ProductSerializer(serializers.ModelSerializer):
           'price',
           'product_type',
           'description',
-          'images'
+          'images',
+          'date_modified',
+          'status'
       ]
       model = Product

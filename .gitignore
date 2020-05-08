@@ -1,5 +1,6 @@
 .DS_Store
 venv/
+nv/
 .vscode
 
 db.sqlite3
@@ -144,3 +145,20 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+frontend/public/images/testguitar.jpg
+frontend/package-lock.json
+frontend/package-lock.json
+backend/media/gallery/amp.jpeg
+backend/media/gallery/bass.jpg
+backend/media/gallery/coolguitaraquarium.jpg
+backend/media/gallery/cord.jpg
+backend/media/gallery/multiverse.jpg
+backend/media/gallery/oldguitar.jpg
+backend/media/gallery/Screen_Shot_2020-04-26_at_6.16.14_PM.png
+backend/media/gallery/strings.jpeg
+backend/media/gallery/studio.jpg
+backend/media/gallery/testguitar.jpg
+backend/media/gallery/veryold.jpg
+backend/db
+backend/db.sqlite3
+backend/db.sqlite3

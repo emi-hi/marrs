@@ -11,23 +11,34 @@ import Repairs from './components/Repairs'
 import Consign from './components/Consign'
 import Studio from './components/Studio'
 import Product from './components/Product'
-import axios from 'axios';
+import axios from 'axios'
 import ROUTES_PRODUCTS from './routes/Products'
 import Header from './components/Header'
 import history from './history';
 function App() {
+  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([])
   const [selectedProduct, setSelectedProduct] = useState({})
 
-  useEffect(() => {
+
+  const refreshProducts = () => {
+    setLoading(true)
     axios.get(`/api/product`)
-    .then(res => {   
+    .then(res => {
       setProducts(res.data)
-      // console.log(res.data)
+      setLoading(false)
     })
     .catch(error => {console.log(error)})
-  }, [])
-  
+  }
+
+  useEffect(() => {
+    refreshProducts()
+  },[])
+
+
+  if (loading) {
+    return (<p>...loading</p>);
+  }
   return (
     <Router history={history}>
       <div className="application">
@@ -38,14 +49,22 @@ function App() {
                   <Home />
                 </Route>
                 <Route exact path={ROUTES_PRODUCTS.DETAIL}
-                  render={() => <Product selectedProduct={selectedProduct} products={products}/>}
+                  render={() => <Product selectedProduct={selectedProduct} products={products} setProducts={setProducts} loading={loading}/>}
               />
                <Route path={ROUTES_PRODUCTS.LIST}
-                  render={() => <Shop products={products} 
-                  setSelectedProduct={setSelectedProduct}/>}
+                  render={() => <Shop
+                  products={products} 
+                  setSelectedProduct={setSelectedProduct}
+                  loading={loading}
+                   />}
               />
-              <Route exact path = '/shop/' render={() => <Shop products={products}
-                  setSelectedProduct={setSelectedProduct}/>} 
+              <Route exact path = '/shop/' render={() => 
+              <Shop
+              products={products}
+              setSelectedProduct={setSelectedProduct}
+              setProducts={setProducts}
+              loading={loading}
+              />} 
                   />
                 <Route path="/repairs">
                   <Repairs />

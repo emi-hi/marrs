@@ -19,6 +19,7 @@ export default function Product(props) {
     return (
       <img id="product-main-pic" key={image.id} src={image.image} alt={selectedProduct.title}/>
     )})  
+
   return (
     <div id="selected-product">
 
