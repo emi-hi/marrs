@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 export default function Shop(props) {
   const { products, setSelectedProduct, loading } = props
   const [searchTerm, setSearchTerm] = useState("")
-
   const { type } = useParams();
 
   const showProducts = products.map((product) => {
@@ -46,8 +45,9 @@ export default function Shop(props) {
   }
   return (
     <div className="shop">
+      <h4>{type}</h4>
       <form className="form-inline my-2 my-lg-0">
-            <input
+            {/* <input
               className="form-control mr-sm-2" type="search"
               placeholder="Search"
               aria-label="Search"
@@ -58,7 +58,7 @@ export default function Shop(props) {
               type="submit">
             >
               Search
-            </button>
+            </button> */}
           </form>
       <div className="row row-no-gutters">
         {showProducts}

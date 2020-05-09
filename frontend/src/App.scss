@@ -80,14 +80,27 @@ div.application {
 
 }
 
+#product-image {
+  .main-image-container {
+    height: 40vh;
+    
+  }
+  #main-image {
+    height:40vh;
+  }
+  div.row {
+    height: 15vh;
+    padding: 10px;
+  }
+  
+  }
 div#selected-product {
   text-align:center;
   width: 90%;
+  
   #product-main-pic {
     width:100%;
   }
-    #product-image {
-    }
     #product-text {
       #price {
         text-align: right;
@@ -99,6 +112,15 @@ div#selected-product {
     }
     }
 }
+span#thumbnail {
+  img#product-images {
+      object-fit: cover;
+      overflow: hidden;
+      width: 90%;
+      height: 90%;
+    }
+
+  }
 
 // /* IPHONE STYLES */
 @media only screen and (max-width: 560px) {
