@@ -1,19 +1,17 @@
 
 import React from "react";
 
-
-
 export default function ProductImage(props) {
   const { images, title, setMainImage } = props
   const imageMap =  images.map((image) => {
     return (
-      <span key={image.id} id="thumbnail" className="col-sm-2">
+      // <span key={image.id} id="thumbnail" className="col-2">
         <img id="product-images" key={image.id} src={image.image} active={true} alt={title} onClick={()=>setMainImage(image.image)}/>
-      </span>
+      // </span>
     )})  
 return(
   <div>
-    <div className="row">
+    <div className="row" id="thumbnail-row">
     {imageMap}
     </div>
   </div>

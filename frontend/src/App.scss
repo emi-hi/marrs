@@ -79,19 +79,32 @@ div.application {
   }
 
 }
+#product-modal {
+  position: absolute;
+  top: 5rem;
+  right: 20rem;
+  bottom: 0;
+  left: 0;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
+.modal-content {
+  width: auto;
+  background-color: darkcyan;
+}
 
 #product-image {
   .main-image-container {
-    height: 40vh;
+    // height: 50vh;
     
   }
   #main-image {
-    height:40vh;
+    height:70%;
+    width: 70%;
+    object-fit: cover;
   }
-  div.row {
-    height: 15vh;
-    padding: 10px;
-  }
+
   
   }
 div#selected-product {
@@ -112,15 +125,21 @@ div#selected-product {
     }
     }
 }
-span#thumbnail {
+div#thumbnail-row {
+  height: 9vh;
+  padding-left: 1rem;
+ 
+}
+
   img#product-images {
       object-fit: cover;
       overflow: hidden;
-      width: 90%;
-      height: 90%;
+      width: 7vh;
+      height: 7vh;
+      margin: 5px
     }
 
-  }
+  // }
 
 // /* IPHONE STYLES */
 @media only screen and (max-width: 560px) {
