@@ -4,7 +4,9 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import './App.scss';
+import './css/App.scss';
+import './css/Shop.scss';
+import './css/Shop-product.scss';
 import Home from './components/Home'
 import Shop from './components/Shop'
 import Repairs from './components/Repairs'

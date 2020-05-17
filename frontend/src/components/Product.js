@@ -24,42 +24,42 @@ export default function Product(props) {
     )
   }
 
-  const modal = (
-    <div id="product-modal" className="modal" tabIndex="-1" role="dialog" style={showModal ? { display: 'block' } : { display: 'none' }}>
-      <div className="modal-dialog" role="document">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">{selectedProduct.name}</h5>
-            <button
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-label="Close"
-              onClick={() => {
-                setShowModal(false);
-              }}>
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div className="modal-body">
-          <img id="main-image"
-            src={mainImage? mainImage : firstImage}
-          />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  // const modal = (
+  //   <div id="product-modal" className="modal" tabIndex="-1" role="dialog" style={showModal ? { display: 'block' } : { display: 'none' }}>
+  //     <div className="modal-dialog" role="document">
+  //       <div className="modal-content">
+  //         <div className="modal-header">
+  //           <h5 className="modal-title">{selectedProduct.name}</h5>
+  //           <button
+  //             type="button"
+  //             className="close"
+  //             data-dismiss="modal"
+  //             aria-label="Close"
+  //             onClick={() => {
+  //               setShowModal(false);
+  //             }}>
+  //             <span aria-hidden="true">&times;</span>
+  //           </button>
+  //         </div>
+  //         <div className="modal-body">
+  //         <img id="main-image"
+  //           src={mainImage? mainImage : firstImage}
+  //         />
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
   return (
     <div id="selected-product">
 
       <div className="row" id="product-main">
-        {modal}
+        {/* {modal} */}
         <div className="col-sm-7" id="product-image">
           <div className="main-image-container">
             <img id="main-image"
             src={mainImage? mainImage : firstImage}
-            onClick={() => setShowModal(true)}/>
+            />
             {selectedProduct.images > 1 ? showProductImage : null }
           </div>
          

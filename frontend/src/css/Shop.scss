@@ -1,0 +1,28 @@
+.shop {
+  width:100%;
+  h5{
+    text-align: center;
+  }
+  div.row{
+    div#each-product {
+      height: 50vh;
+      margin-bottom: 10px;
+      display:flex;
+      flex-direction: column;
+      width:100%;
+      justify-content: flex-end;
+      align-items: center;
+      .product-image-box {
+        height: 70%;
+        text-align:center;
+        img#thumbnail-product {
+          object-fit: contain;
+          overflow: hidden;
+          width: 90%;
+          height: 90%;
+        }
+      }
+    }
+  }
+
+}
