@@ -15,15 +15,14 @@
 
 #product-image {
   .main-image-container {
-    // height: 50vh;
+    height:70%;
+    width: 75%;
+    img {
+
+      object-fit: contain;
+    }
     
   }
-  #main-image {
-    height:70%;
-    width: 70%;
-    object-fit: cover;
-  }
-
   
   }
 div#selected-product {

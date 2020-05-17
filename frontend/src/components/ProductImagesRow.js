@@ -1,7 +1,7 @@
 
 import React from "react";
 
-export default function ProductImage(props) {
+export default function ProductImagesRow(props) {
   const { images, title, setMainImage } = props
   const imageMap =  images.map((image) => {
     return (
