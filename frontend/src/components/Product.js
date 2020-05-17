@@ -11,13 +11,18 @@ export default function Product(props) {
   const [mainImage, setMainImage] = useState('');
   const selectedProducts = products.filter(each => parseInt(each.id)=== parseInt(productId));
   const selectedProduct = selectedProducts[0];
-  const firstImage = selectedProduct.images[0].image;
+  const firstImage = selectedProduct.images[0]? selectedProduct.images[0].image :  '/images/no-image.jpg';
   
   if (!selectedProduct) {
     return (
       <h4>searching products...</h4>
     )
   } 
+  const showProductImage = () => {
+    return (
+<ProductImage images={selectedProduct.images} title={selectedProduct.title} setMainImage={setMainImage} />
+    )
+  }
 
   const modal = (
     <div id="product-modal" className="modal" tabIndex="-1" role="dialog" style={showModal ? { display: 'block' } : { display: 'none' }}>
@@ -55,7 +60,7 @@ export default function Product(props) {
             <img id="main-image"
             src={mainImage? mainImage : firstImage}
             onClick={() => setShowModal(true)}/>
-            <ProductImage images={selectedProduct.images} title={selectedProduct.title} setMainImage={setMainImage} />
+            {selectedProduct.images > 1 ? showProductImage : null }
           </div>
          
         </div>

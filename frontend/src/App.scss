@@ -69,7 +69,7 @@ div.application {
         height: 70%;
         text-align:center;
         img#thumbnail-product {
-          object-fit: cover;
+          object-fit: contain;
           overflow: hidden;
           width: 90%;
           height: 90%;

@@ -10,7 +10,7 @@ export default function Shop(props) {
 
   const showProducts = products.map((product) => {
     if (!type || product.product_type.name.toUpperCase() === type.toUpperCase()){
-      const firstImage = product.images.length > 0 ? product.images[0].image : '/images/testguitar.jpg'
+      const firstImage = product.images.length > 0 ? product.images[0].image : '/images/no-image.jpg'
       return ( 
         <div className="col-lg-3" id="each-product" key={product.id}
           onClick={()=>{
