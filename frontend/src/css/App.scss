@@ -55,6 +55,9 @@ header {
 }
 
 div.application {
+  ul {
+    text-align: left;
+  }
   background-color: #f8f9fa;
   height:100vh;
   .app-main {
