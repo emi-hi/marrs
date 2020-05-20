@@ -16,24 +16,25 @@ export default function ProductMainImage(props) {
 
   return (
     <div className="main-image-container">
-        <ReactImageMagnify {...{
+      <div id="feature-image">
+      <ReactImageMagnify {...{
           id: "main-image",
           smallImage: {
-          alt: selectedProduct.title,
-          isFluidWidth: true,
-          width: '70%',
-          height: '70%',
-          src: mainImage? mainImage : firstImage,
+            alt: selectedProduct.title,
+            isFluidWidth: true,
+            src: mainImage? mainImage : firstImage,
+
           },
           largeImage: {
-              src:  mainImage? mainImage : firstImage,
-              width: 1200,
-              height: 1800
+            src:  mainImage? mainImage : firstImage,
+            width: '800',
+            height: '800'
           },
           enlargedImagePosition: 'over',
           isHintEnabled: true
         }} />
-          {selectedProduct.images > 1 ? showProductImage : null }
+      </div>
+          {selectedProduct.images.length > 1 ? showProductImage() : null }
     </div>
     )
 }

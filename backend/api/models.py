@@ -36,4 +36,4 @@ class Image(models.Model):
                               verbose_name='Image')
     def __str__(self):
       """A string representation of the model."""
-      return self.image
+      return self.product.title

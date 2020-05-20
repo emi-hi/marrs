@@ -22,13 +22,14 @@ export default function Product(props) {
     <div id="selected-product">
 
       <div className="row" id="product-main">
-        <div className="col-sm-7" id="product-image">
+        <div className="col-sm-8" id="product-image">
           <ProductMainImage selectedProduct={selectedProduct}/>
         </div>
-        <div className="col-sm-5" id="product-text">
+        <div className="col-sm-4" id="product-text">
           <h4>{selectedProduct.title}</h4>
           <h5 id="price">${selectedProduct.price}</h5>
           <p id="description">{selectedProduct.description}</p>
+          <p className="purchase-contact">For purchase please email julian.marrsaudio@gmail.com or call/text 778.928.4574</p>
         </div>
       </div>
       

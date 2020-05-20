@@ -79,6 +79,7 @@ function App() {
                 </Route>
               </Switch>
           </main>
+
         </div>
     </Router>
   );
