@@ -8,7 +8,7 @@ export default function Repairs(props) {
 
   return (
     <div className="main-section">
-     <h5>REPAIR</h5> 
+     <h5>Repair</h5> 
      <p>
       Professional top notch repair, restoration, upgrade, and maintenance of musical gear, hi-fi, and studio pieces - vintage or modern.
      </p>
