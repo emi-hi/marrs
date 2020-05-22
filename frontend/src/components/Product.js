@@ -28,7 +28,11 @@ export default function Product(props) {
           <h4>{selectedProduct.title}</h4>
           <h5 id="price">${selectedProduct.price}</h5>
           <p id="description">{selectedProduct.description}</p>
-          <p className="purchase-contact">For purchase please email julian.marrsaudio@gmail.com or call/text 778.928.4574</p>
+          <div className="purchase-contact">
+            <h6>
+            For purchase please email julian.marrsaudio@gmail.com or call/text 778.928.4574
+            </h6>
+          </div>
         </div>
       </div>
       
