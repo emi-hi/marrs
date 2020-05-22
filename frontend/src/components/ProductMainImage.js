@@ -1,8 +1,7 @@
 
 import React, { useState } from "react";
-import ReactImageMagnify from 'react-image-magnify';
 import ProductImagesRow from './ProductImagesRow'
-
+import {SideBySideMagnifier} from "react-image-magnifiers";
 export default function ProductMainImage(props) {
   const { selectedProduct } = props;
   const [mainImage, setMainImage] = useState('');
@@ -17,22 +16,24 @@ export default function ProductMainImage(props) {
   return (
     <div className="main-image-container">
       <div id="feature-image">
-      <ReactImageMagnify {...{
-          id: "main-image",
-          smallImage: {
-            alt: selectedProduct.title,
-            isFluidWidth: true,
-            src: mainImage? mainImage : firstImage,
-
-          },
-          largeImage: {
-            src:  mainImage? mainImage : firstImage,
-            width: '800',
-            height: '800'
-          },
-          enlargedImagePosition: 'over',
-          isHintEnabled: true
-        }} />
+      <SideBySideMagnifier
+        className="input-position"
+        style={{ order:false}}
+        imageSrc={mainImage? mainImage : firstImage}
+        alwaysInPlace={true}
+        overlayOpacity={.6}
+        switchSides={false}
+        zoomPosition="over"
+        inPlaceMinBreakpoint={641}
+        fillAvailableSpace={false}
+        fillAlignTop={false}
+        fillGapTop={10}
+        fillGapRight={10}
+        fillGapBottom={10}
+        fillGapLeft={10}
+        zoomContainerBorder="1px solid #ccc"
+        zoomContainerBoxShadow="0 4px 8px rgba(0,0,0,.5)"
+      />
       </div>
           {selectedProduct.images.length > 1 ? showProductImage() : null }
     </div>
