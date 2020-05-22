@@ -45,7 +45,7 @@ function App() {
     <Router history={history}>
       <div className="application">
           <Header />
-          `<main className="app-main">
+          <main className="app-main">
               <Switch>
                 <Route exact path="/">
                   <Home />

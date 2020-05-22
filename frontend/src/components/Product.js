@@ -20,7 +20,6 @@ export default function Product(props) {
 
   return (
     <div id="selected-product">
-
       <div className="row" id="product-main">
         <div className="col-sm-8" id="product-image">
           <ProductMainImage selectedProduct={selectedProduct}/>

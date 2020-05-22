@@ -10,7 +10,10 @@ export default function MainNav(props) {
 
 return (
   <nav>
-    <Navbar id="navbar" collapseOnSelect expand="lg" bg="light" className="navbar transparent navbar-inverse">
+    <Navbar id="navbar"
+      collapseOnSelect expand="lg"
+      bg="white"
+      className="navbar transparent navbar-inverse">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
