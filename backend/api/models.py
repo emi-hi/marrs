@@ -20,6 +20,7 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     date_modified = models.DateField(default=django.utils.timezone.now)
     status = models.ForeignKey(SaleStatus, to_field="id", null=True, on_delete=models.SET_NULL, default=1)
+    featured_item = models.BooleanField(default=False)
 
     def __str__(self):
         """A string representation of the model."""

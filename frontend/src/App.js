@@ -21,8 +21,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([])
   const [selectedProduct, setSelectedProduct] = useState({})
-
-
   const refreshProducts = () => {
     setLoading(true)
     axios.get(`/api/product`)

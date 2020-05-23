@@ -26,7 +26,8 @@ export default function Repairs(props) {
       <div className="notice">
       <h6>Diagnostic Fee: </h6>$30
       <br/>
-      <h6>Repair Fee: </h6>$25 per 1/2 hour plus parts.
+      <h6>Repair Fee: </h6>$50 per  hour plus parts
+
       <br /><br />
       <i>Add 12% PST/GST to all pricing</i>
       </div>
