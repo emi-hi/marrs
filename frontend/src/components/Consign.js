@@ -12,7 +12,7 @@ export default function Consign(props) {
       <p>
         Bring us your gear that you’d like to sell and we’ll find a new home for it. </p>
 
-      <div className="fees">
+      <div className="notice">
       <h6>Rates:</h6>
       <p>
         20% on the first $500 and 15% on anything above that.

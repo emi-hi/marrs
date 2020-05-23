@@ -23,7 +23,7 @@ export default function Repairs(props) {
       </p>
 </div>
 <div className="col-sm-4">
-      <div className="fees">
+      <div className="notice">
       <h6>Diagnostic Fee: </h6>$30
       <br/>
       <h6>Repair Fee: </h6>$25 per 1/2 hour plus parts.

@@ -1,41 +1,67 @@
+$dominant-color: #83d6de;
+$complimentary-color: #fffdf9;
+$nav-background:rgba(140, 140, 140, .9);
+// $border-color:#E24E42;
+$border-color:rgb(202, 56, 42);
+// $border-color:rgb(172, 98, 97);
+$logo-font: rgba(60, 60, 60, .8); 
 header {
-
   .header-container {
+    background: url("/images/schematic-large-red.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
     display:flex;
-    // background-color:rgba(255, 255, 255, 0.8);
+    background-color:$nav-background;
     flex-direction: column;
+    width:90vw;
+    // height:15vh;
+    margin-left:auto;
+    margin-right: auto;
     .logo-container {
+
       display:flex;
       margin-bottom: 10px;
+      h1 {
+        color: $logo-font;
+        margin:auto;
+      }
       img {
-      border-radius: 35%;
-        
-      opacity: .8;
-      max-height: 18vh;
+        -webkit-filter: invert(1);
+        filter: invert(1);
+      // border-radius: 35%;
+      // opacity: .8;
+      // max-height: 18vh;
       margin:auto;
       }
     }
     .contact-info {
+      padding-bottom: 10px;
       padding-top:10px;
       display:flex;
       flex-direction: row;
       justify-content: space-evenly;
-      width:90%;
+      width:90vw;
       margin:auto;
-      background-color: white;
+      background-color:$nav-background;
       a {
         padding-left:5px;
         text-decoration: none;
-        color: black;
+        color: $complimentary-color;
       }
     }
   }
   nav {
     width:90vw;
     margin:auto;
+    .color-nav {
+      background-color: $dominant-color;
+    }
+
+    // background-color: rgb(130, 197, 236);;
     .mr-auto{
       margin-left: auto;
       margin-right: auto;
+      // color: $dominant-color;
     }
 
   }
@@ -44,7 +70,7 @@ header {
       height: 16vh;
     }
     h1 {
-      font-size: calc(18px + (65 - 18) * ((100vw - 300px) / (1600 - 300)));
+      font-size: calc(24px + (65 - 18) * ((100vw - 300px) / (1600 - 300)));
       line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
       font-family: ca;
       text-align:center;
@@ -70,7 +96,7 @@ div.application {
   width:100%;
   position: fixed;
   overflow: scroll;
-  background-color: #aee4eb;
+  background-color: $dominant-color;
   // background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   background-image: url("/images/studio-4.jpg");
   // background-size: 100%;
@@ -90,6 +116,7 @@ div.application {
     margin: 0 auto;
     width: 90%;
     min-height: 70vh;
+    // background-image: linear-gradient(to right, rgba(255,255,255,.2), rgba(255,255,255,1));
     background-color:rgba(255, 255, 255, .9);
     padding-top:1.5rem;
     padding-left:2rem;
@@ -102,11 +129,28 @@ div.application {
     }
   }
 }
-.fees {
+.home-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  #astro-ted {
+    width: 25vh;
+    height:25vh;
+    border-radius: 50%;
+    border: solid 1.5px $logo-font;
+  }
+
+}
+.featured-items {
+
+}
+.notice {
+  background-color: $complimentary-color;
   margin:auto;
   max-width:500px;
   padding:10px;
-  outline: 2px solid #474747;
+  border-radius: 30px;
+  border: 2px solid $border-color;
 }
 
 
@@ -115,15 +159,27 @@ div.application {
 
 // /* IPHONE STYLES */
 @media only screen and (max-width: 560px) {
-  header div img {
+  header {
+    nav {
+      width:100vw;
+    }
+    .header-container {
+      background-size: 400%;
+      width:100vw;
+      .contact-info{
+        width: 100vw;
+      }
+    }
+    div img {
     height: 10vh;
+    }
   }
   header .header-container .contact-info {
     flex-direction: column;
   }
   div.application{
     .app-main {  
-
+      width:100vw;
       .main-section{
         padding-left:0;
         padding-right: 0;

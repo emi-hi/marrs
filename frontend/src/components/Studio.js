@@ -15,7 +15,7 @@ export default function Studio(props) {
             <p>
               Servicing the Victoria and Vancouver independent music scene. Featuring a medium sized tracking room, isolation booth, and control room.
             </p><br />
-            <div className="fees">
+            <div className="notice">
               <h6>Fees:</h6> 
               <p>$40 an hour for studio time for tracking and mixing</p>
               <h6>Mastering:</h6>

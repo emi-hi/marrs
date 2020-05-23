@@ -7,7 +7,7 @@ export default function Header(props){
       <div>
         <div className="header-container">
           <div className="logo-container">
-           <img src="/images/Logo.png" id="left" alt='Marrs Audio'/>
+           <h1>Marrs Audio</h1>
           </div>
         <div>
           <div className="contact-info">

@@ -12,8 +12,7 @@ return (
   <nav>
     <Navbar id="navbar"
       collapseOnSelect expand="lg"
-      bg="white"
-      className="navbar transparent navbar-inverse">
+      className="color-nav">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
