@@ -2,15 +2,23 @@
 import React, { useState } from "react";
 import history from '../history'
 import { useParams } from 'react-router-dom';
+import classNames from "classnames"
 
 export default function Shop(props) {
-  const { products, setSelectedProduct, loading } = props
+  const { products, setSelectedProduct, loading, setSearchItem } = props
   const [searchTerm, setSearchTerm] = useState("")
   const { type } = useParams();
-
+  
   const showProducts = products.map((product) => {
     if (!type || product.product_type.name.toUpperCase() === type.toUpperCase()){
       const firstImage = product.images.length > 0 ? product.images[0].image : '/images/no-image.jpg'
+      const productSaleStatus = classNames("product-status", {
+        "product-status-available": product.sale_status.comment === "for sale",
+        "product-status-reserved": product.sale_status.comment === "reserved",
+        "product-status-sold": product.sale_status.comment === "sold"
+      })
+    
+    
       return ( 
         <div className="col-lg-3" id="each-product" key={product.id}
           onClick={()=>{
@@ -19,8 +27,9 @@ export default function Shop(props) {
           <div className="product-image-box">
             <img id="thumbnail-product" src={firstImage} alt={product.title} />
           </div>
-          <h6>{product.title}</h6>
-          <p id="price">${product.price}</p>
+          <p className={productSaleStatus}>{product.sale_status.comment==="for sale"? "":
+          product.sale_status.comment==="sold"?" <SOLD> " : " <ON HOLD> "}{product.title}</p>
+          <p id="price" className={productSaleStatus}>${product.price}</p>
         </div>
 
       )
@@ -29,13 +38,11 @@ export default function Shop(props) {
     }
   });
 
-  // const filterProducts = () => {
-  //   console.log(products)
-  //   newProducts = products.filter(name => {
-  //   name.includes(searchTerm)).map(filtered => (
-      
+  const handleSubmit = () => {
 
-  // }}
+    setSearchItem(searchTerm);
+  };
+
   const handleInputChange = (event) => {
       const { value } = event.target;
       setSearchTerm(value)
@@ -46,20 +53,21 @@ export default function Shop(props) {
   return (
     <div className="shop">
       <h4>{type}</h4>
-      <form className="form-inline my-2 my-lg-0">
-            {/* <input
-              className="form-control mr-sm-2" type="search"
-              placeholder="Search"
-              aria-label="Search"
-              onChange={handleInputChange}
-            />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit">
-            >
-              Search
-            </button> */}
-          </form>
+      <form className="form-inline my-2 my-lg-0"  onSubmit={handleSubmit}>
+        <input 
+          className="form-control mr-sm-2" type="search"
+          placeholder="Search"
+          aria-label="Search"
+          onChange={handleInputChange}
+        />
+        <button
+          className="btn btn-outline-success my-2 my-sm-0"
+          // type="submit">
+          onClick={()=>handleSubmit()}
+        >
+          Search
+        </button>
+      </form>
       <div className="row row-no-gutters">
         {showProducts}
       </div>

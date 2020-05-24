@@ -22,11 +22,17 @@ function App() {
   const [products, setProducts] = useState([])
   const [selectedProduct, setSelectedProduct] = useState({})
   const [featuredItems, setFeaturedItems] = useState([])
+  const [searchItem, setSearchItem] = useState('')
+  
+
   const refreshProducts = () => {
+    if (searchItem) {
+      console.log("search item")
+    }
     setLoading(true)
     axios.all([
       axios.get(`/api/product`),
-      axios.get(`api/featured-product`),
+      axios.get(`/api/featured-product`),
     ])
     .then(axios.spread((productsRes, featuredRes) => (
       setProducts(productsRes.data),
@@ -65,6 +71,7 @@ function App() {
                   products={products} 
                   setSelectedProduct={setSelectedProduct}
                   loading={loading}
+                  setSearchItem={setSearchItem}
                    />}
               />
               <Route exact path = '/shop/' render={() => 
@@ -73,6 +80,7 @@ function App() {
               setSelectedProduct={setSelectedProduct}
               setProducts={setProducts}
               loading={loading}
+              setSearchItem={setSearchItem}
               />} 
                   />
                 <Route path="/repairs">

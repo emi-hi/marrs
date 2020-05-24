@@ -10,6 +10,8 @@ export default function ItemCarousel(props) {
     const firstImage = item.images.length > 0 ? item.images[0].image : '/images/no-image.jpg'
       return ( 
         <div id="each-feature" key={item.id}>
+          <h6>{item.title}</h6>
+          <p id="price">${item.price}</p>
           <div>
             <img 
              onClick={()=>{
@@ -17,8 +19,7 @@ export default function ItemCarousel(props) {
               history.push(`shop/${item.product_type.name}/${item.id}`)}}
               id="featured-item-image" src={firstImage} alt={item.title}/>
           </div>
-          <h6>{item.title}</h6>
-          <p id="price">${item.price}</p>
+
         </div>
 
       )

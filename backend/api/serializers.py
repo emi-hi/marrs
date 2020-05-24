@@ -1,6 +1,6 @@
 # todos/serializers.py
 from rest_framework import serializers
-from .models import Product, ProductType, Image
+from .models import Product, ProductType, Image, SaleStatus
 
 class ImageSerializer(serializers.ModelSerializer):
   class Meta:
@@ -12,9 +12,16 @@ class ProductTypeSerializer(serializers.ModelSerializer):
     model = ProductType
     fields = "__all__"
 
+class SaleStatusSerializer(serializers.ModelSerializer):
+  class Meta:
+      model = SaleStatus
+      fields = ("comment",)
+
+
 class ProductSerializer(serializers.ModelSerializer):
   images = ImageSerializer(many=True)
   product_type = ProductTypeSerializer()
+  sale_status = SaleStatusSerializer()
   class Meta:
       fields = [
           'id',
@@ -24,6 +31,6 @@ class ProductSerializer(serializers.ModelSerializer):
           'description',
           'images',
           'date_modified',
-          'status'
+          'sale_status'
       ]
       model = Product
