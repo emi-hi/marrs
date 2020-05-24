@@ -6,6 +6,7 @@ from api import views
 
 
 urlpatterns = [
+  path('featured-product', views.ListFeaturedProduct.as_view(), name='product'),
   path('product', views.ListProduct.as_view(), name='product')
 
 ]

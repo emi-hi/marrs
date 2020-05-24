@@ -9,3 +9,6 @@ class ListProduct(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+class ListFeaturedProduct(generics.ListCreateAPIView):
+    queryset = Product.objects.filter(featured_item = True)
+    serializer_class = ProductSerializer

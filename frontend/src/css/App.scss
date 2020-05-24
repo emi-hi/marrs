@@ -1,9 +1,7 @@
 $dominant-color: #83d6de;
 $complimentary-color: #fffdf9;
 $nav-background:rgba(140, 140, 140, .9);
-// $border-color:#E24E42;
 $border-color:rgb(202, 56, 42);
-// $border-color:rgb(172, 98, 97);
 $logo-font: rgba(60, 60, 60, .8); 
 header {
   .header-container {
@@ -14,7 +12,6 @@ header {
     background-color:$nav-background;
     flex-direction: column;
     width:90vw;
-    // height:15vh;
     margin-left:auto;
     margin-right: auto;
     .logo-container {
@@ -129,21 +126,35 @@ div.application {
     }
   }
 }
-.home-row {
+#home-row {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  #astro-ted {
-    width: 25vh;
-    height:25vh;
-    border-radius: 50%;
-    border: solid 1.5px $logo-font;
+}
+#astro-ted {
+  width: 20vh;
+  height:20vh;
+  border-radius: 50%;
+  border: solid 1.5px $logo-font;
+}
+.carousel-container {
+  margin-left:3rem;
+  margin-right: 3rem;
+  .slick-prev:before,
+.slick-next:before {
+  color: $border-color;
+  font-size:xx-large;
+}
+  #each-feature {
+    // border: solid 2px black;
+    margin:1rem;
+    height:100%;
+    #featured-item-image {
+      width: 20vw;
+    }
   }
-
 }
-.featured-items {
 
-}
 .notice {
   background-color: $complimentary-color;
   margin:auto;
@@ -152,7 +163,6 @@ div.application {
   border-radius: 30px;
   border: 2px solid $border-color;
 }
-
 
 
   // }
@@ -177,6 +187,10 @@ div.application {
   header .header-container .contact-info {
     flex-direction: column;
   }
+  #astro-ted {
+    width: 10vh;
+    height:10vh;
+  }
   div.application{
     .app-main {  
       width:100vw;
@@ -186,7 +200,17 @@ div.application {
       }
     }
   }
-
+  .carousel-container {
+    margin-left:.2rem;
+    margin-right: .2rem;
+    #each-feature {
+      margin:.2rem;
+      // height:100%;
+      #featured-item-image {
+        width: 70vw;
+      }
+    }
+  }
 }
 @media only screen and (min-width: 992px) {
   nav.navbar {

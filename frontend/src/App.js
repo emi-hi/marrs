@@ -21,13 +21,19 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([])
   const [selectedProduct, setSelectedProduct] = useState({})
+  const [featuredItems, setFeaturedItems] = useState([])
   const refreshProducts = () => {
     setLoading(true)
-    axios.get(`/api/product`)
-    .then(res => {
-      setProducts(res.data)
+    axios.all([
+      axios.get(`/api/product`),
+      axios.get(`api/featured-product`),
+    ])
+    .then(axios.spread((productsRes, featuredRes) => (
+      setProducts(productsRes.data),
+      setFeaturedItems(featuredRes.data),
       setLoading(false)
-    })
+      )
+    ))
     .catch(error => {console.log(error)})
   }
 
@@ -46,7 +52,10 @@ function App() {
           <main className="app-main">
               <Switch>
                 <Route exact path="/">
-                  <Home />
+                  <Home
+                  featuredItems={featuredItems}
+                  setSelectedProduct={setSelectedProduct}
+                  />
                 </Route>
                 <Route exact path={ROUTES_PRODUCTS.DETAIL}
                   render={() => <Product selectedProduct={selectedProduct} products={products} setProducts={setProducts} loading={loading}/>}
