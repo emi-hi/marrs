@@ -35,7 +35,7 @@ export default function Product(props) {
           selectedProduct.sale_status.comment==="sold"?" <SOLD> " : " <ON HOLD> "}{selectedProduct.title}</h4>
           <h5 id="price" className={productSaleStatus}>${selectedProduct.price}</h5>
           <p id="description">{selectedProduct.description}</p>
-          {selectedProduct.sale_status.comment !== "sold" &&
+          {selectedProduct.sale_status.comment === "for sale" &&
           <div className="purchase-contact">
             <h6>
             For purchase please email julian.marrsaudio@gmail.com or call/text 778.928.4574

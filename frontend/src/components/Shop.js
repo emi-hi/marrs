@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import classNames from "classnames"
 
 export default function Shop(props) {
-  const { products, setSelectedProduct, loading, setSearchItem } = props
+  const { products, setSelectedProduct, loading, axiosSearch } = props
   const [searchTerm, setSearchTerm] = useState("")
   const { type } = useParams();
   
@@ -39,8 +39,7 @@ export default function Shop(props) {
   });
 
   const handleSubmit = () => {
-
-    setSearchItem(searchTerm);
+    axiosSearch(searchTerm)
   };
 
   const handleInputChange = (event) => {
@@ -62,9 +61,7 @@ export default function Shop(props) {
         />
         <button
           className="btn btn-outline-success my-2 my-sm-0"
-          // type="submit">
-          onClick={()=>handleSubmit()}
-        >
+          type="submit">
           Search
         </button>
       </form>

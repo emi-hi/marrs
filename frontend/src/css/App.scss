@@ -3,6 +3,30 @@ $complimentary-color: rgba(255, 255, 255, .6);
 $nav-background:rgba(140, 140, 140, .9);
 $border-color:rgb(202, 56, 42);
 $logo-font: rgba(60, 60, 60, .8); 
+
+h1 {
+  font-size: calc(24px + (65 - 18) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  font-family: ca;
+  text-align:center;
+  margin: 0px;
+  margin:auto;
+  color: $logo-font;
+}
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: calc(10px + (18 - 10) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  text-align: center;
+}
+h3 {
+  font-size: calc(10px + (14 - 10) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin: .2rem;
+}
+
 header {
   .header-container {
     background: url("/images/schematic-large-red.png");
@@ -17,18 +41,6 @@ header {
     .logo-container {
       display:flex;
       margin-bottom: 10px;
-      // h1 {
-      //   color: $logo-font;
-      //   margin:auto;
-      // }
-      // img {
-      //   -webkit-filter: invert(1);
-      //   filter: invert(1);
-      // // border-radius: 35%;
-      // // opacity: .8;
-      // // max-height: 18vh;
-      // margin:auto;
-      // }
     }
     .contact-info {
       padding-bottom: 10px;
@@ -52,41 +64,18 @@ header {
     .color-nav {
       background-color: $dominant-color;
     }
-
+    .dropdown-menu {
+      background-color: #d2f6f9
+    }
     .mr-auto{
       margin-left: auto;
       margin-right: auto;
     }
-
-  }
-  div {
-    img {
-      height: 16vh;
-    }
-    h1 {
-      font-size: calc(24px + (65 - 18) * ((100vw - 300px) / (1600 - 300)));
-      line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
-      font-family: ca;
-      text-align:center;
-      margin: 0px;
-      margin:auto;
-      color: $logo-font;
-    }
-    h2 {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: calc(10px + (18 - 10) * ((100vw - 300px) / (1600 - 300)));
-      line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
-      text-align: center;
-    }
-    h3 {
-      font-size: calc(10px + (14 - 10) * ((100vw - 300px) / (1600 - 300)));
-      line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
-      font-family: 'Courier New', Courier, monospace;
-      text-align: center;
-      margin: .2rem;
-    }
   }
 }
+
+
+
 
 div.application {
   width:100%;
@@ -95,7 +84,6 @@ div.application {
   background-color: $dominant-color;
   background-image: url("/images/studio-4.jpg");
   background-size: cover;
-
  
   h6 {
     font-weight: bold;
@@ -127,16 +115,17 @@ div.application {
   justify-content: space-evenly;
 }
 #astro-ted {
-  width: 20vh;
-  height:20vh;
+  max-width: 20vw;
+  max-height:20vw;
   border-radius: 50%;
   border: solid 1.5px $logo-font;
+  margin-top: 10px;
 }
 .carousel-container {
   margin-left:3rem;
   margin-right: 3rem;
   .slick-prev:before,
-.slick-next:before {
+  .slick-next:before {
   color: $border-color;
   font-size:xx-large;
 }
@@ -156,12 +145,18 @@ div.application {
   padding:10px;
   border-radius: 30px;
   border: 2px solid $border-color;
+  margin-bottom: 1rem;
 }
 
 
-  // }
-
 // /* IPHONE STYLES */
+
+@media only screen and (min-width:560px) and (max-width: 992px) { 
+  #astro-ted {
+    width: 15vw;
+    height: 15vw;
+  }
+}
 @media only screen and (max-width: 560px) {
   header {
     nav {
@@ -182,8 +177,8 @@ div.application {
     flex-direction: column;
   }
   #astro-ted {
-    width: 10vh;
-    height:10vh;
+    width: 10vw;
+    height:10vw;
   }
   div.application{
     .app-main {  
@@ -206,6 +201,7 @@ div.application {
     }
   }
 }
+
 @media only screen and (min-width: 992px) {
   nav.navbar {
     display: flex;

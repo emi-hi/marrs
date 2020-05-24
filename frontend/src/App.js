@@ -22,13 +22,19 @@ function App() {
   const [products, setProducts] = useState([])
   const [selectedProduct, setSelectedProduct] = useState({})
   const [featuredItems, setFeaturedItems] = useState([])
-  const [searchItem, setSearchItem] = useState('')
-  
+
+
+  const axiosSearch = (searchValue) => {
+    axios.get(`/api/search/${searchValue}`)
+    .then((response) => {
+      console.log("*******************************")
+      console.log(response)
+      setProducts(response.data)
+      }
+    )
+  }
 
   const refreshProducts = () => {
-    if (searchItem) {
-      console.log("search item")
-    }
     setLoading(true)
     axios.all([
       axios.get(`/api/product`),
@@ -42,6 +48,8 @@ function App() {
     ))
     .catch(error => {console.log(error)})
   }
+
+
 
   useEffect(() => {
     refreshProducts()
@@ -71,7 +79,7 @@ function App() {
                   products={products} 
                   setSelectedProduct={setSelectedProduct}
                   loading={loading}
-                  setSearchItem={setSearchItem}
+                  axiosSearch={axiosSearch}
                    />}
               />
               <Route exact path = '/shop/' render={() => 
@@ -80,7 +88,7 @@ function App() {
               setSelectedProduct={setSelectedProduct}
               setProducts={setProducts}
               loading={loading}
-              setSearchItem={setSearchItem}
+              axiosSearch={axiosSearch}
               />} 
                   />
                 <Route path="/repairs">
