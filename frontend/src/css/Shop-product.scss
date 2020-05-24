@@ -56,6 +56,20 @@ div#selected-product {
     }
     }
 }
+
+.product-status {
+  &-available{
+    font-weight: bold;
+  }
+  &-reserved{
+    font-style:italic;
+  }
+  &-sold{
+    color: grey;
+    font-style: italic;
+    // text-decoration: line-through;
+  }
+}
 @media only screen and (max-width: 560px) {
   
 }

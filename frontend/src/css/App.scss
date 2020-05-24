@@ -1,5 +1,5 @@
 $dominant-color: #83d6de;
-$complimentary-color: #fffdf9;
+$complimentary-color: rgba(255, 255, 255, .6);
 $nav-background:rgba(140, 140, 140, .9);
 $border-color:rgb(202, 56, 42);
 $logo-font: rgba(60, 60, 60, .8); 
@@ -15,21 +15,20 @@ header {
     margin-left:auto;
     margin-right: auto;
     .logo-container {
-
       display:flex;
       margin-bottom: 10px;
-      h1 {
-        color: $logo-font;
-        margin:auto;
-      }
-      img {
-        -webkit-filter: invert(1);
-        filter: invert(1);
-      // border-radius: 35%;
-      // opacity: .8;
-      // max-height: 18vh;
-      margin:auto;
-      }
+      // h1 {
+      //   color: $logo-font;
+      //   margin:auto;
+      // }
+      // img {
+      //   -webkit-filter: invert(1);
+      //   filter: invert(1);
+      // // border-radius: 35%;
+      // // opacity: .8;
+      // // max-height: 18vh;
+      // margin:auto;
+      // }
     }
     .contact-info {
       padding-bottom: 10px;
@@ -54,11 +53,9 @@ header {
       background-color: $dominant-color;
     }
 
-    // background-color: rgb(130, 197, 236);;
     .mr-auto{
       margin-left: auto;
       margin-right: auto;
-      // color: $dominant-color;
     }
 
   }
@@ -72,6 +69,8 @@ header {
       font-family: ca;
       text-align:center;
       margin: 0px;
+      margin:auto;
+      color: $logo-font;
     }
     h2 {
       font-family: 'Courier New', Courier, monospace;
@@ -94,9 +93,7 @@ div.application {
   position: fixed;
   overflow: scroll;
   background-color: $dominant-color;
-  // background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   background-image: url("/images/studio-4.jpg");
-  // background-size: 100%;
   background-size: cover;
 
  
@@ -107,13 +104,11 @@ div.application {
     text-align: left;
   }
 
-  // background-color: #f8f9fa;
   height:100vh;
   .app-main {
     margin: 0 auto;
     width: 90%;
     min-height: 70vh;
-    // background-image: linear-gradient(to right, rgba(255,255,255,.2), rgba(255,255,255,1));
     background-color:rgba(255, 255, 255, .9);
     padding-top:1.5rem;
     padding-left:2rem;
@@ -146,7 +141,6 @@ div.application {
   font-size:xx-large;
 }
   #each-feature {
-    // border: solid 2px black;
     margin:1rem;
     height:100%;
     #featured-item-image {
