@@ -10,7 +10,7 @@ div#selected-product {
       flex-direction: column;
       max-height:100%;
       #feature-image {
-        max-width: 75%;
+        max-width: 85%;
         img {
           object-fit: contain;
           overflow: hidden;
@@ -36,7 +36,6 @@ div#selected-product {
   }
   
     #product-text {
-      // padding-right: 5rem;
       .purchase-contact {
         margin-top: 5rem;
         font-weight: bold;

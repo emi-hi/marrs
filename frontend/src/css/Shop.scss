@@ -7,6 +7,23 @@
   h5{
     text-align: center;
   }
+  #search-bar {
+    // width: 50%;
+    margin-bottom: 2rem;
+    button {
+      background-color: white;
+      border: solid 1px $dominant-color;
+      #magnifier {
+        // margin: 1rem;
+        color: $dominant-color;
+      }
+
+    }
+    #search-input {
+      margin-right: 5px;
+    }
+   
+  }
   div.row{
     div#each-product {
       // height: 50vh;
@@ -29,4 +46,10 @@
     }
   }
 
+}
+@media only screen and (max-width: 560px) {
+  .shop {
+    padding-left:10px;
+    padding-right: 10px;
+  }
 }

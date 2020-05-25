@@ -27,8 +27,6 @@ function App() {
   const axiosSearch = (searchValue) => {
     axios.get(`/api/product?search=${searchValue}`)
     .then((response) => {
-      console.log("*******************************")
-      console.log(response)
       setProducts(response.data)
       }
     )
@@ -49,12 +47,9 @@ function App() {
     .catch(error => {console.log(error)})
   }
 
-
-
   useEffect(() => {
     refreshProducts()
   },[])
-
 
   if (loading) {
     return (<p>...loading</p>);

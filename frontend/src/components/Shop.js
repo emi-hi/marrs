@@ -7,6 +7,7 @@ import classNames from "classnames"
 export default function Shop(props) {
   const { products, setSelectedProduct, loading, axiosSearch } = props
   const [searchTerm, setSearchTerm] = useState("")
+  const [search, setSearch] = useState(false)
   const { type } = useParams();
   
   const showProducts = products.map((product) => {
@@ -37,12 +38,18 @@ export default function Shop(props) {
       return ''
     }
   });
+  const showSearch = () => {
+    setSearch(true)
+  }
 
   const handleSubmit = () => {
-    if (searchTerm.length > 0) {
       axiosSearch(searchTerm)
-    }
   };
+  const keyPressed = (event) => {
+      if (event.key === "Enter") {
+        handleSubmit(searchTerm)
+      }
+  }
 
   const handleInputChange = (event) => {
       const { value } = event.target;
@@ -54,23 +61,41 @@ export default function Shop(props) {
   return (
     <div className="shop">
       <h4>{type}</h4>
-      <form className="form-inline my-2 my-lg-0">
-        <input 
-          className="form-control mr-sm-2" type="search"
-          placeholder="Search"
-          aria-label="Search"
-          onChange={handleInputChange}
-        />
+      <div id="search-bar">
+        {!search && 
         <button
-          className="btn btn-outline-success my-2 my-sm-0"
-          // type="submit">
-          onClick={()=>handleSubmit()}
-          >
-          Search
+        className="btn"
+        id="search-button"
+        type="submit"
+        onClick={()=>showSearch()}
+        >
+          <i className="fas fa-search" id="magnifier" aria-hidden="true"></i>
         </button>
-      </form>
+      }
+        {search === true &&
+          <div className="row">
+            <input 
+            type="search"
+            className="form-control form-control-sm ml-3 w-75"
+            id="search-input"
+            placeholder="Search"
+            aria-label="Search"
+            onChange={handleInputChange}
+            onKeyPress={keyPressed}
+            />
+            <button
+            className="btn"
+            id="search-button"
+            type="submit"
+            onClick={()=>handleSubmit()}
+            >
+              <i className="fas fa-search" id="magnifier" aria-hidden="true"></i>
+            </button>
+          </div>
+        }
+            </div>
       <div className="row row-no-gutters">
-        {showProducts}
+        {products.length > 0? showProducts: "Sorry, no products found"}
       </div>
     </div>
   )
