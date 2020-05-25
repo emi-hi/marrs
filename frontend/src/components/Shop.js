@@ -39,7 +39,9 @@ export default function Shop(props) {
   });
 
   const handleSubmit = () => {
-    axiosSearch(searchTerm)
+    if (searchTerm.length > 0) {
+      axiosSearch(searchTerm)
+    }
   };
 
   const handleInputChange = (event) => {
@@ -52,7 +54,7 @@ export default function Shop(props) {
   return (
     <div className="shop">
       <h4>{type}</h4>
-      <form className="form-inline my-2 my-lg-0"  onSubmit={handleSubmit}>
+      <form className="form-inline my-2 my-lg-0">
         <input 
           className="form-control mr-sm-2" type="search"
           placeholder="Search"
@@ -61,7 +63,9 @@ export default function Shop(props) {
         />
         <button
           className="btn btn-outline-success my-2 my-sm-0"
-          type="submit">
+          // type="submit">
+          onClick={()=>handleSubmit()}
+          >
           Search
         </button>
       </form>

@@ -25,7 +25,7 @@ function App() {
 
 
   const axiosSearch = (searchValue) => {
-    axios.get(`/api/search/${searchValue}`)
+    axios.get(`/api/product?search=${searchValue}`)
     .then((response) => {
       console.log("*******************************")
       console.log(response)
