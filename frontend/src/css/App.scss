@@ -29,7 +29,7 @@ h3 {
 
 header {
   .header-container {
-    background: url("/images/schematic-large-red.png");
+    background: url('/images/schematic-large-red.png');
     background-repeat: no-repeat;
     background-size: 100%;
     display:flex;
@@ -82,7 +82,7 @@ div.application {
   position: fixed;
   overflow: scroll;
   background-color: $dominant-color;
-  background-image: url("/images/studio-4.jpg");
+  background-image: url('/images/studio-4.jpg');
   background-size: cover;
  
   h6 {
@@ -112,6 +112,9 @@ div.application {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  #marrs-info {
+    margin-top: 2rem;
+  }
 }
 #astro-ted {
   max-width: 20vw;
