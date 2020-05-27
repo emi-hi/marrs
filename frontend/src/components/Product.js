@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import ProductMainImage from "./ProductMainImage";
 import classNames from "classnames";
+import ReactMarkdown from "react-markdown"
 
 export default function Product(props) {
   const { products } = props;
@@ -15,6 +16,7 @@ export default function Product(props) {
   if (!selectedProduct) {
     return <h4>searching products...</h4>;
   }
+
   const productSaleStatus = classNames("product-status", {
     "product-status-available":
       selectedProduct.sale_status.comment === "for sale",
@@ -41,7 +43,9 @@ export default function Product(props) {
           <h5 id="price" className={productSaleStatus}>
             ${selectedProduct.price}
           </h5>
-          <p id="description">{selectedProduct.description}</p>
+          <p className="product-description">
+          <ReactMarkdown source={selectedProduct.description} />
+          </p>
           {selectedProduct.sale_status.comment === "for sale" && (
             <div className="purchase-contact">
               <h6>
