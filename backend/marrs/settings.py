@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7k+e0iet*f6))dsxm&4o#fc_1(!2hy_3fd51)$946v#l)#c&c)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -61,6 +61,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3002',
     'http://localhost:8000',
     'http://localhost:8080',
+    'http://marrsaudio.com'
 ]
 
 ROOT_URLCONF = 'marrs.urls'
