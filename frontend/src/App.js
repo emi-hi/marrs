@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Router, Switch, Route, HashRouter } from "react-router-dom";
+import { Switch, Route, HashRouter } from "react-router-dom";
 import "./css/App.scss";
 import "./css/Shop.scss";
 import "./css/Shop-product.scss";
