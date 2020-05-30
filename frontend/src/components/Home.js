@@ -19,13 +19,13 @@ export default function Home(props) {
           </div>
         </div>
         <div id="marrs-info" className="col-sm-5">
-          An independant music store servicing Victoria BC since 2018. 
+          An independent music store servicing Victoria BC since 2018. 
         </div>
         <div className="col-3">
           <img
             id="astro-ted"
             alt="astronaut Ted"
-            src="images/astro-large.jpg"
+            src="/images/astro-large.jpg"
           />
         </div>
       </div>
