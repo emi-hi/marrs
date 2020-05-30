@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import history from "../history";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import classNames from "classnames";
 
 export default function Shop(props) {
@@ -31,12 +31,12 @@ export default function Shop(props) {
           key={product.id}
           onClick={() => {
             setSelectedProduct(product);
-            history.push(`${product.product_type.name}/${product.id}`);
           }}
-        >
+        ><Link to={`${product.product_type.name}/${product.id}`}>
           <div className="product-image-box">
             <img id="thumbnail-product" src={firstImage} alt={product.title} />
           </div>
+          
           <p className={productSaleStatus}>
             {product.sale_status.comment === "for sale"
               ? ""
@@ -48,6 +48,7 @@ export default function Shop(props) {
           <p id="price" className={productSaleStatus}>
             ${product.price}
           </p>
+          </Link>
         </div>
       );
     } else {
