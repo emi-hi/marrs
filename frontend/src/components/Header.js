@@ -1,20 +1,16 @@
 import React from "react";
 import MainNav from "./MainNav";
-import history from "../history";
+import { Link } from "react-router-dom";
 export default function Header(props) {
   return (
     <header>
       <div>
         <div className="header-container">
+        <Link to={`/`} className="home-link">
           <div className="logo-container">
-            <h1
-              onClick={() => {
-                history.push(`/`);
-              }}
-            >
-              Marrs Audio
-            </h1>
+            <h1>Marrs Audio</h1>
           </div>
+          </Link>
           <div>
             <div className="contact-info">
               <a

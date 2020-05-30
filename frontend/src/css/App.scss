@@ -3,7 +3,12 @@ $complimentary-color: rgba(255, 255, 255, .6);
 $nav-background:rgba(140, 140, 140, .9);
 $border-color:rgb(202, 56, 42);
 $logo-font: rgba(60, 60, 60, .8); 
-
+a:hover {
+  text-decoration: none;
+}
+a {
+  color:black;
+}
 h1 {
   font-size: calc(24px + (65 - 18) * ((100vw - 300px) / (1600 - 300)));
   line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
@@ -12,6 +17,10 @@ h1 {
   margin: 0px;
   margin:auto;
   color: $logo-font;
+  :hover {
+    color: $logo-font;
+    text-decoration: none;
+  }
 }
 h2 {
   font-family: 'Courier New', Courier, monospace;
