@@ -2,7 +2,7 @@
 venv/
 nv/
 .vscode
-
+*.sqlite3
 db.sqlite3
 
 product_images/
@@ -16,7 +16,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+build
 develop-eggs/
 dist/
 downloads/
