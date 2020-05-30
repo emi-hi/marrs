@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route, HashRouter } from "react-router-dom";
 import "./css/App.scss";
 import "./css/Shop.scss";
 import "./css/Shop-product.scss";
@@ -51,7 +51,7 @@ function App() {
     return <p>...loading</p>;
   }
   return (
-    <Router history={history}>
+    <HashRouter history={history}>
       <div className="application">
         <Header />
         <main className="app-main">
@@ -110,7 +110,7 @@ function App() {
           </Switch>
         </main>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 export default App;
