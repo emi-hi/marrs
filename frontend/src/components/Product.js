@@ -50,8 +50,14 @@ export default function Product(props) {
           {selectedProduct.sale_status.comment === "for sale" && (
             <div className="purchase-contact">
               <h6>
-                For purchase please email julian.marrsaudio@gmail.com or
-                call/text 778.928.4574
+                For purchase please email 
+                <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="mailto:julian.marrsaudio@gmail.com"
+                > julian.marrsaudio@gmail.com
+                </a> or call/text 
+                <a href="tel:7789284574"> 778-928-4574</a>
               </h6>
             </div>
           )}
