@@ -3,7 +3,7 @@ import React from "react";
 export default function Consign(props) {
   return (
     <div className="main-section">
-      <h5>Consignment</h5>
+      <h2>Consignment</h2>
       <p>
         Bring us your gear that you’d like to sell and we’ll find a new home for
         it.{" "}

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import history from "../history";
 import { useParams, Link } from "react-router-dom";
 import classNames from "classnames";
 
@@ -27,27 +26,29 @@ export default function Shop(props) {
       return (
         <div
           className="col-lg-3"
-          id="each-product"
           key={product.id}
           onClick={() => {
             setSelectedProduct(product);
           }}
-        ><Link to={`${product.product_type.name}/${product.id}`}>
+        ><Link id="each-product" to={`${product.product_type.name}/${product.id}`}>
           <div className="product-image-box">
             <img id="thumbnail-product" src={firstImage} alt={product.title} />
           </div>
-          
-          <p className={productSaleStatus}>
-            {product.sale_status.comment === "for sale"
-              ? ""
-              : product.sale_status.comment === "sold"
-              ? " <SOLD> "
-              : " <ON HOLD> "}
-            {product.title}
-          </p>
-          <p id="price" className={productSaleStatus}>
-            ${product.price}
-          </p>
+          <div id="title-price">
+            <p id="price" className={productSaleStatus}>
+              ${product.price.slice(0, -3)}
+            </p>
+            <p id="title"
+              className={productSaleStatus}>
+              {product.sale_status.comment === "for sale"
+                ? ""
+                : product.sale_status.comment === "sold"
+                ? " <SOLD> "
+                : " <ON HOLD> "}
+              {product.title}
+            </p>
+          </div>
+
           </Link>
         </div>
       );
@@ -77,43 +78,47 @@ export default function Shop(props) {
   }
   return (
     <div className="shop">
-      <h4>{type}</h4>
-      <div id="search-bar">
-        {!search && (
-          <button
-            className="btn"
-            id="search-button"
-            type="submit"
-            onClick={() => showSearch()}
-          >
-            <i className="fas fa-search" id="magnifier" aria-hidden="true"></i>
-          </button>
-        )}
-        {search === true && (
-          <div className="row">
-            <input
-              type="search"
-              className="form-control form-control-sm ml-3 w-50"
-              id="search-input"
-              placeholder={searchPlaceholder}
-              aria-label="Search"
-              onChange={handleInputChange}
-              onKeyPress={keyPressed}
-            />
+      <h2>{type}</h2>
+      <div id="search-bar-container">
+        <div></div>
+        <div id="search-bar">
+          {!search && (
             <button
               className="btn"
               id="search-button"
               type="submit"
-              onClick={() => handleSubmit()}
+              onClick={() => showSearch()}
             >
-              <i
-                className="fas fa-search"
-                id="magnifier"
-                aria-hidden="true"
-              ></i>
+              <i className="fas fa-search" id="magnifier" aria-hidden="true"></i>
             </button>
-          </div>
-        )}
+          )}
+          {search === true && (
+            <div className="row">
+              <input
+                type="search"
+                className="form-control form-control-sm ml-3 w-50"
+                id="search-input"
+                placeholder={searchPlaceholder}
+                aria-label="Search"
+                onChange={handleInputChange}
+                onKeyPress={keyPressed}
+              />
+              <button
+                className="btn"
+                id="search-button"
+                type="submit"
+                onClick={() => handleSubmit()}
+              >
+                <i
+                  className="fas fa-search"
+                  id="magnifier"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+            
+          )}
+        </div>
       </div>
       <div className="row row-no-gutters">
         {products.length > 0 ? showProducts : "Sorry, no products found"}

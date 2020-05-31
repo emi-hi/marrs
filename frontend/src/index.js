@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './fonts/cosmic_alien/ca.ttf'
+
 ReactDOM.render(
     <App />,
   document.getElementById('root')

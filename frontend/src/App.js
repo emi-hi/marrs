@@ -12,7 +12,6 @@ import Product from "./components/Product";
 import axios from "axios";
 import ROUTES_PRODUCTS from "./routes/Products";
 import Header from "./components/Header";
-import history from "./history";
 function App() {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
@@ -51,7 +50,7 @@ function App() {
     return <p>...loading</p>;
   }
   return (
-    <HashRouter history={history}>
+    <HashRouter>
       <div className="application">
         <Header />
         <main className="app-main">

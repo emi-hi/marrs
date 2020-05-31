@@ -1,5 +1,4 @@
 import React from "react";
-import history from "../history";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
@@ -11,13 +10,13 @@ export default function ItemCarousel(props) {
     const firstImage =
       item.images.length > 0 ? item.images[0].image : "/images/no-image.jpg";
     return (
-      <Link to={`shop/${item.product_type.name}/${item.id}`}
+      <Link key={item.id} to={`shop/${item.product_type.name}/${item.id}`}
       onClick={() => {
         setSelectedProduct(item);
       }}>
         <div id="each-feature" key={item.id}>
           <h6>{item.title}</h6>
-          <p id="price">${item.price}</p>
+          <p id="price">${item.price.slice(0, -3)}</p>
           <div>
 
             <img
@@ -66,10 +65,10 @@ export default function ItemCarousel(props) {
   };
 
   return (
-    <div>
+    // <div>
       <div className="carousel-container">
         <Slider {...settings}>{showFeaturedItem}</Slider>
       </div>
-    </div>
+    // </div>
   );
 }

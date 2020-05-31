@@ -14,7 +14,7 @@ export default function Product(props) {
   const selectedProduct = selectedProducts[0];
 
   if (!selectedProduct) {
-    return <h4>searching products...</h4>;
+    return <h2>searching products...</h2>;
   }
 
   const productSaleStatus = classNames("product-status", {
@@ -24,7 +24,7 @@ export default function Product(props) {
       selectedProduct.sale_status.comment === "reserved",
     "product-status-sold": selectedProduct.sale_status.comment === "sold",
   });
-
+  // console.log(selectedProduct.price.slice(0, -3))
   return (
     <div id="selected-product">
       <div className="row" id="product-main">
@@ -32,20 +32,21 @@ export default function Product(props) {
           <ProductMainImage selectedProduct={selectedProduct} />
         </div>
         <div className="col-sm-4" id="product-text">
-          <h4 className={productSaleStatus}>
+          <h2 className={productSaleStatus}>
             {selectedProduct.sale_status.comment === "for sale"
               ? ""
               : selectedProduct.sale_status.comment === "sold"
               ? " <SOLD> "
               : " <ON HOLD> "}
             {selectedProduct.title}
-          </h4>
-          <h5 id="price" className={productSaleStatus}>
-            ${selectedProduct.price}
-          </h5>
-          <p className="product-description">
-          <ReactMarkdown source={selectedProduct.description} />
-          </p>
+          </h2>
+          <div>
+          <h3 id="price" className={productSaleStatus}>
+            ${selectedProduct.price.slice(0, -3)} 
+          </h3>
+          <p id="plus-tax">+ applicable tax</p>
+          </div>
+          <ReactMarkdown className="product-description" source={selectedProduct.description} />
           {selectedProduct.sale_status.comment === "for sale" && (
             <div className="purchase-contact">
               <h6>

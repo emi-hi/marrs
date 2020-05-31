@@ -9,7 +9,7 @@ export default function Home(props) {
       <div className="row" id="home-row">
         <div className="col-sm-4">
           <div className="notice">
-            <h5>COVID-19 Notice</h5>
+            <h2>COVID-19 Notice</h2>
             <h6>
               The shop is currently open by appointment only. Please browse the
               products online and give us a call if you'd like to come in for a
@@ -19,9 +19,11 @@ export default function Home(props) {
           </div>
         </div>
         <div id="marrs-info" className="col-sm-5">
+          <p>
           An independent music store servicing Victoria BC since 2018. 
+          </p>
         </div>
-        <div className="col-3">
+        <div className="col-3" id="ted-container">
           <img
             id="astro-ted"
             alt="astronaut Ted"
@@ -30,7 +32,7 @@ export default function Home(props) {
         </div>
       </div>
       <div className="featured-items">
-        <h5>Featured Items</h5>
+        <h2>Featured Items</h2>
       </div>
       <ItemCarousel
         featuredItems={featuredItems}

@@ -16,7 +16,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-# build
 develop-eggs/
 dist/
 downloads/
@@ -262,3 +261,11 @@ frontend/public/images/unused/new-blue.png
 frontend/public/images/unused/new.png
 frontend/public/images/unused/schematic-blue.png
 frontend/public/images/unused/testguitar.jpg
+backend/api/fixtures/0003_product_pedals.json
+backend/api/fixtures/0004_pedal_images.json
+backend/api/fixtures/0005_product_guitars.json
+frontend/package-lock.json
+package-lock.json
+frontend/src/logo.svg
+frontend/src/serviceWorker.js
+backend/marrs/settings.py

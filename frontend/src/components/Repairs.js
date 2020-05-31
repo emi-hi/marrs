@@ -3,7 +3,7 @@ import React from "react";
 export default function Repairs(props) {
   return (
     <div className="main-section">
-      <h5>Repairs</h5>
+      <h2>Repairs</h2>
       <div className="row">
         <div className="col-sm-8">
           <p>

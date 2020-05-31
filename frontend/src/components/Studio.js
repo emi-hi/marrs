@@ -3,7 +3,7 @@ import React from "react";
 export default function Studio(props) {
   return (
     <div className="main-section">
-      <h5>Studio</h5>
+      <h2>Studio</h2>
       <div className="row">
         <div className="col-sm-6">
           <br />
