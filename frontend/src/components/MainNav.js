@@ -13,7 +13,7 @@ export default function MainNav(props) {
               Home
             </Nav.Link>
             <NavDropdown title="Shop" id="collasible-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/shop/accessories">
+              <NavDropdown.Item as={Link} to="/shop/Accessories">
                 Accessories
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/shop/Amplifiers">
@@ -26,7 +26,7 @@ export default function MainNav(props) {
                 Keyboard and Synths
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/shop/Pedals">
-                Pedals
+                Pedals and Effects
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as={Link} to="/shop/">
